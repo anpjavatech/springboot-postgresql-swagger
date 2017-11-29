@@ -1,13 +1,13 @@
 Application consist of ::
-SpringBoot
-Postgres
+SpringBoot,
+Postgres,
 Liquibase
 
 
 API definition : To save Person details in Postgres DB.
 
-Method : POST
-Path : /save
+Method : POST,
+Path : /save,
 RequestBody : {
                 "person_id":1,
                 "first_name":"XXX",
@@ -21,7 +21,7 @@ RequestBody : {
                 "address_line_2":"IIIII",
                 "state":"NNNNN",
                 "postal_code":8888
-              }
+              },
 
 ResponseBody : {
                    "person_id": 1,
