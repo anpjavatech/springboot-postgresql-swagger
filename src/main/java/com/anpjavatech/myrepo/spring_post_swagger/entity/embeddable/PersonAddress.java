@@ -1,4 +1,6 @@
-package com.anpjavatech.myrepo.spring_post_liqui.entity.embeddable;
+package com.anpjavatech.myrepo.spring_post_swagger.entity.embeddable;
+
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -7,15 +9,19 @@ import javax.persistence.Embeddable;
 public class PersonAddress {
 
     @Column(name = "address_line_1")
+    @ApiModelProperty(notes = "Address line 1")
     private String address_line_1;
 
     @Column(name = "address_line_2")
+    @ApiModelProperty(notes = "Address line 2")
     private String address_line_2;
 
     @Column(name = "state")
+    @ApiModelProperty(notes = "State")
     private String state;
 
     @Column(name = "postal_code")
+    @ApiModelProperty(notes = "PIN code")
     private int postal_code;
 
     public PersonAddress() {

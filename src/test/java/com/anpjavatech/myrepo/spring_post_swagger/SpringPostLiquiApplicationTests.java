@@ -1,4 +1,4 @@
-package com.anpjavatech.myrepo.spring_post_liqui;
+package com.anpjavatech.myrepo.spring_post_swagger;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

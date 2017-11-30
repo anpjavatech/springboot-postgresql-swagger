@@ -1,9 +1,10 @@
-package com.anpjavatech.myrepo.spring_post_liqui.entity.dto;
+package com.anpjavatech.myrepo.spring_post_swagger.entity.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 public class PersonDto {
 

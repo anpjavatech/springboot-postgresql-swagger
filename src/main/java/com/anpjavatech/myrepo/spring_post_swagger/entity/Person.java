@@ -1,6 +1,7 @@
-package com.anpjavatech.myrepo.spring_post_liqui.entity;
+package com.anpjavatech.myrepo.spring_post_swagger.entity;
 
-import com.anpjavatech.myrepo.spring_post_liqui.entity.embeddable.PersonAddress;
+import com.anpjavatech.myrepo.spring_post_swagger.entity.embeddable.PersonAddress;
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 
@@ -10,27 +11,35 @@ public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "person_id")
+    @ApiModelProperty(required = true, notes = "Id for the person")
     private int person_id;
 
     @Column(name = "first_name")
+    @ApiModelProperty(required = true, notes = "FirstName of the person")
     private String first_name;
 
     @Column(name = "last_name")
+    @ApiModelProperty(notes = "LastName of the person")
     private String last_name;
 
     @Column(name = "gender")
+    @ApiModelProperty(required = true, notes = "Gender - Male or Female")
     private String gender;
 
     @Column(name = "age")
+    @ApiModelProperty(required = true, notes = "Age of the person")
     private int age;
 
     @Column(name = "martial_status")
+    @ApiModelProperty(required = true, notes = "Martial Status - Single or Married")
     private String martial_status;
 
     @Column(name = "email")
+    @ApiModelProperty(required = true, notes = "Email of the person")
     private String email;
 
     @Column(name = "mobile_number")
+    @ApiModelProperty(required = true, notes = "Mobile Number of the person")
     private String mobile_number;
 
     @Embedded
