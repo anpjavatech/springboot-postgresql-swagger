@@ -46,13 +46,11 @@ public class Person {
     private PersonAddress personAddress;
 
     public Person() {
-        System.out.println("Default constructor is called");
     }
 
-    public Person(int person_id, String first_name, String last_name, String gender, int age, String martial_status,
+    public Person(String first_name, String last_name, String gender, int age, String martial_status,
                   String email, String mobile_number, PersonAddress personAddress) {
 
-        this.person_id = person_id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.gender = gender;
@@ -106,12 +104,12 @@ public class Person {
 
         Person person = (Person) o;
 
-        return person_id == person.person_id;
+        return first_name == person.first_name;
     }
 
     @Override
     public int hashCode() {
-        return person_id;
+        return first_name.hashCode();
     }
 
     @Override

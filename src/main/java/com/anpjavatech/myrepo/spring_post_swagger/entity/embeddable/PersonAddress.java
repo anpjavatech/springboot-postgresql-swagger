@@ -25,7 +25,6 @@ public class PersonAddress {
     private int postal_code;
 
     public PersonAddress() {
-        System.out.printf("Default constructor for Person Address");
     }
 
     public PersonAddress(String address_line_1, String address_line_2, String state, int postal_code) {

@@ -8,6 +8,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.spring.web.json.Json;
@@ -49,19 +50,29 @@ public class PersonController {
     })
     @PostMapping(value = "/save",produces = "application/json")
     public Person savePersonDetails(@Valid @RequestBody PersonDto personDto){
-        System.out.println("person dto :: "+personDto);
         return personService.savePerson(generatePersonFromDto(personDto));
     }
 
     private Person generatePersonFromDto(PersonDto personDto) {
-        System.out.println("To create the Person Entity.");
         PersonAddress personAddress = new PersonAddress(personDto.getAddress_line_1(),personDto.getAddress_line_2(),
                                                         personDto.getState(),personDto.getPostal_code());
 
-        return new Person(personDto.getPerson_id(), personDto.getFirst_name(), personDto.getLast_name(),
+        return new Person(personDto.getFirst_name(), personDto.getLast_name(),
                                     personDto.getGender(), personDto.getAge(), personDto.getMartial_status(),
                                     personDto.getEmail(),personDto.getMobile_number(),personAddress);
     }
 
+    @ApiOperation(value = "To fetch Person details",
+    response = Person.class,
+    httpMethod = "GET",
+    produces = "application/json")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Person fetched successfully"),
+            @ApiResponse(code = 404, message = "Not found")
+    })
+    @GetMapping(value = "/{id}/fetch",produces = "application/json")
+    public Person fetchPersonDetails(@PathVariable Integer id){
+        return personService.getPerson(id);
+    }
 
 }

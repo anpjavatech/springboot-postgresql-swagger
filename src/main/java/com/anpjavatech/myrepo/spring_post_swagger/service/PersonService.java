@@ -6,4 +6,5 @@ public interface PersonService {
 
     Person savePerson(Person person);
 
+    Person getPerson(Integer id);
 }

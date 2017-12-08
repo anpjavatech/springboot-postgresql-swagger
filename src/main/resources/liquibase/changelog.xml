@@ -7,7 +7,7 @@
 
     <changeSet id="1" author="anoop" failOnError="true">
         <comment>create table to store person info</comment>
-        <createTable tableName="person" schemaName="person_library">
+        <createTable tableName="person" >
             <column name="person_id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>

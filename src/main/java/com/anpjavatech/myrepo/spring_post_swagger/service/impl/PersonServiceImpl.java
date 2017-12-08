@@ -14,7 +14,11 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public Person savePerson(Person person) {
-        System.out.println("In Service repo to save the entity");
         return personRepository.save(person);
+    }
+
+    @Override
+    public Person getPerson(Integer id) {
+        return personRepository.findOne(id);
     }
 }

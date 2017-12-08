@@ -10,10 +10,6 @@ public class PersonDto {
 
     @JsonProperty(required = true)
     @NotNull
-    private int person_id;
-
-    @JsonProperty(required = true)
-    @NotNull
     private String first_name;
 
     @NotNull
@@ -51,14 +47,13 @@ public class PersonDto {
     @JsonProperty(defaultValue = "0")
     private int postal_code;
 
-    public PersonDto(@JsonProperty("person_id")int person_id,@JsonProperty("first_name") String first_name,
+    public PersonDto(@JsonProperty("first_name") String first_name,
                      @JsonProperty("last_name") String last_name,@JsonProperty("gender") String gender,
                      @JsonProperty("age")int age,@JsonProperty("martial_status")String martial_status,
                      @JsonProperty("email")String email,@JsonProperty("mobile_number") String mobile_number,
                      @JsonProperty("address_line_1")String address_line_1,@JsonProperty("address_line_2")String address_line_2,
                      @JsonProperty("state")String state,@JsonProperty("postal_code")int postal_code) {
 
-        this.person_id = person_id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.gender = gender;
@@ -70,10 +65,6 @@ public class PersonDto {
         this.address_line_2 = address_line_2;
         this.state = state;
         this.postal_code = postal_code;
-    }
-
-    public int getPerson_id() {
-        return person_id;
     }
 
     public String getFirst_name() {
