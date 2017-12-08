@@ -1,14 +1,11 @@
-Application consist of :: 
-SpringBoot, 
-Postgres, 
-Liquibase
+# Springboot - PostgreSQL - Liquibase - Swagger2
 
-API definition : To save Person details in Postgres DB.
+Application having 
 
-Method : POST,
-Path : /save,
-RequestBody : 
-{ "person_id":1, "first_name":"XXX", "last_name":"XXX", "gender":"YY", "age":88, "martial_status":"YYY", "email":"YYYYYYYY.com", "mobile_number":"HHHHH", "address_line_1":"JJJJJ", "address_line_2":"IIIII", "state":"NNNNN", "postal_code":8888 },
+1 - Springboot as application framework
 
-ResponseBody : 
-{ "person_id": 1, "first_name": "XXX", "last_name": "XXX", "gender": "YY", "age": 88, "martial_status": "YYY", "email": "YYYYYYYY.com", "mobile_number": "HHHHH", "personAddress": { "address_line_1": "JJJJJ", "address_line_2": "IIIII", "state": "NNNNN", "postal_code": 8888 } }
+2 - PostgreSQL for the Database
+
+3 - Liquibase used for the migration for the creation of Tables in DB.
+
+4 - Swagger2 is used for the Documentation and API testing
